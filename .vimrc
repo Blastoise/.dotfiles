@@ -9,7 +9,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'mhartington/oceanic-next'
+Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'
@@ -24,9 +24,10 @@ syntax enable
 filetype plugin indent on    " required
 
 set termguicolors
-colorscheme OceanicNext
+colorscheme molokai
 
-let g:airline_theme='dark'
+" Theme for Airline
+" let g:airline_theme='deus'
 
 set number             " show line numbers
 set encoding=utf-8     " set encoding to UTF-8 (default was "latin1")
@@ -45,13 +46,13 @@ set autoindent          " copy indent from current line when starting a new line
 set smartindent         " even better autoindent (e.g. add indent after '{')
 
 " ALE and Linting and Fixers
-" let g:ale_linters = {'python':['flake8']}
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines','trim_whitespace','prettier'],
-" \   'python': ['black'],
-" \}
+let g:ale_linters = {'python':['flake8']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines','trim_whitespace','prettier'],
+\   'python': ['black'],
+\}
 
-" let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
 
 " Splits and Tabbed Files
@@ -65,6 +66,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " For removing one of the two statusline i.e removing the default one
-set noshowmode  " to get rid of thing like --INSERT--
-set noshowcmd  " to get rid of display of last command
-set shortmess+=F  " to get rid of the file name displayed in the command line bar
+" set noshowmode  " to get rid of thing like --INSERT--
+" set noshowcmd  " to get rid of display of last command
+" set shortmess+=F  " to get rid of the file name displayed in the command line bar
