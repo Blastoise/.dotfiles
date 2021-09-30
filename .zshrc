@@ -116,16 +116,21 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# My Personal Aliases:
 
-# Funtion for compiling my C++ file
-function compile() {
-    # file name wihout extension
-    file_name=$(echo $1 | cut -d "." -f 1)
-    g++ -std=c++14 -O2 -Wall ${1} -o ${file_name}
-}
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.zsh_aliases, instead of adding them here directly.
+ 
+if [ -f ~/.zsh_aliases ]; then
+     . ~/.zsh_aliases
+fi
+ 
+# Shell Functions definitions.
+# Created by Ashutosh Kumar
+ 
+if [ -f ~/.zsh_functions ]; then
+     . ~/.zsh_functions
+fi
 
 # Required By Flutter
 export PATH="$PATH:/home/ashutosh/Flutter/flutter/bin"
-
-

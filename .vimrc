@@ -25,17 +25,24 @@ filetype plugin indent on    " required
 
 set termguicolors
 colorscheme molokai
+hi Normal ctermbg=NONE guibg=NONE
 
 " Theme for Airline
 " let g:airline_theme='deus'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#buffer_nr_show=1
 
 set number             " show line numbers
 set encoding=utf-8     " set encoding to UTF-8 (default was "latin1")
 set wildmenu           " visual autocomplete for command menu
 set showmatch          " highlight matching parentheses / brackets [{()}]
 set cursorline         " highlight current line
+set noswapfile         " disable the swapfile
+set incsearch          " show search results as you type
+set hlsearch           " highlight all results
 
-"""" Tab settings
+"" Tab settings
 
 set tabstop=4           " width that a <TAB> character displays as
 set expandtab           " convert <TAB> key-presses to spaces
