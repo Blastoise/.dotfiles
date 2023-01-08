@@ -1,4 +1,5 @@
 # .dotfiles
-![desktop](./Manjaro_Kde_Ricing.png)
 
-![neofetch data](./neofetch.png)
+## Btw I use Arch.
+
+![neofetch data](./Arch_i3wm.png)
