@@ -1,0 +1,15 @@
+#!/bin/sh
+
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+
+# Pass 1 as an argument for charging, 0 for discharging
+BATTERY_CHARGING=$1
+BATTERY_LEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
+
+# Send notifications
+if [ $BATTERY_CHARGING -eq 1 ]; then
+    /usr/bin/notify-send "Charging" "${BATTERY_LEVEL}% of battery charged." -u low -i "battery-charging" -r 9997
+elif [ $BATTERY_CHARGING -eq 0 ]; then
+    /usr/bin/notify-send "Discharging" "${BATTERY_LEVEL}% of battery remaining." -u low -i "battery" -r 9997
+fi
